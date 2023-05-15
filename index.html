@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/all.min.css">
+    <title>YouTube</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            background: #0c0c0c;
+        }
+
+        #box {
+            width: 100%;
+        }
+
+        #header {
+            width: 100%;
+            height: 50px;
+            background: #0c0c0c;
+            position: fixed;
+            color: #ffffff;
+            z-index: 1;
+        }
+
+        #header .a1 {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 15px;
+            font-size: 18px;
+            text-align: center;
+            line-height: 50px;
+
+        }
+
+        #header .a1:hover {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #303030;
+            cursor: pointer;
+        }
+
+        #header .a2 {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 10px;
+            left: 80px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        #header input {
+            width: 600px;
+            height: 40px;
+            position: absolute;
+            top: 5px;
+            left: 500px;
+            border: solid 1PX #505050;
+            border-radius: 20px;
+            background: rgb(30, 28, 28);
+            font-size: 16px;
+        }
+
+        #header input:hover {
+            width: 599px;
+            left: 440px;
+            border: rgb(8, 139, 240) solid 1px;
+            border-radius: 20px 0 0 20px;
+        }
+
+        .a3 i {
+            width: 59px;
+            height: 42px;
+            position: absolute;
+            top: 5.4px;
+            left: 1045px;
+            border: solid 1PX #505050;
+            border-radius: 0px 20px 20px 0px;
+            font-size: 20px;
+            background: rgb(41, 38, 38);
+            color: white;
+            text-align: center;
+            line-height: 43px;
+        }
+
+
+
+        .a4 {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            position: absolute;
+            top: 4px;
+            left: 1120px;
+            font-size: 20px;
+            background: rgb(30, 28, 28);
+            color: white;
+            text-align: center;
+            line-height: 43px;
+        }
+
+        .a4:hover {
+            background: #414141;
+            cursor: pointer;
+        }
+
+        .a5 {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 1750px;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            line-height: 43px;
+        }
+
+        .a5:hover {
+            background: #414141;
+            cursor: pointer;
+        }
+
+
+
+        .a6 {
+            width: 80px;
+            height: 35px;
+            border-radius: 20px;
+            position: absolute;
+            top: 10px;
+            left: 1800px;
+            background: rgb(13, 13, 13);
+            color: rgb(54, 129, 233);
+            text-align: center;
+            line-height: 34px;
+            border: 1px solid rgb(79, 79, 80);
+
+        }
+
+        .a6 i,
+        .a6 span {
+            vertical-align: middle;
+        }
+
+        .a6 i {
+            /* display: inline-block; */
+            font-size: 20px;
+        }
+
+        .a6 span {
+
+            font-size: 14px;
+        }
+
+        .a6:hover {
+            background: rgba(120, 120, 150, 0.3);
+        }
+
+        #nav {
+            width: calc(100% - 250px);
+            height: 50px;
+            line-height: 50px;
+            background: #0c0c0c;
+            position: fixed;
+            top: 50px;
+            left: 250px;
+            z-index: 1;
+        }
+
+        #nav li {
+            margin-left: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            color: white;
+            background: #2c2c2c;
+            border-radius: 10px;
+            display: inline-block;
+
+        }
+
+        #nav li:hover {
+            background: white;
+            color: #000;
+            cursor: pointer;
+        }
+
+
+        #left {
+            width: 250px;
+            height: calc(100% - 50px);
+            background: #0c0c0c;
+            position: fixed;
+            top: 50px;
+            line-height: 50px;
+            color: white;
+            overflow: auto;
+        }
+
+
+        #left td:nth-child(1) {
+            width: 80px;
+            height: 50px;
+            /* background: lightpink; */
+            text-align: center;
+            font-size: 20px;
+            border-radius: 1rem 0 0 1rem;
+        }
+
+        #left td:nth-child(2) {
+            width: 170px;
+            height: 50px;
+            /* background: lightslategray; */
+            font-family: "微軟正黑體";
+            font-size: 16px;
+            font-weight: bolder;
+            border-radius: 0 1rem 1rem 0;
+        }
+
+        #left tr:hover {
+            width: 100px;
+            height: 20px;
+            background: #232323;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        #left h1 {
+            font-size: 20px;
+        }
+
+        #left p {
+            line-height: 18px;
+            font-size: 14px;
+            text-align: center;
+            color: #aaa;
+        }
+
+        #main {
+            width: calc(100% - 250px -160px);
+            /* height: calc(100% - 100px); */
+            background: #0c0c0c;
+            position: absolute;
+            top: 100px;
+            left: 250px;
+            padding: 0px 80px;
+        }
+
+        #main div {
+            width: 450px;
+            height: 253px;
+            margin: 20px;
+            float: left;
+            padding: 40px 0px;
+
+        }
+
+        #main img {
+            width: 450px;
+            height: 253px;
+            border-radius: 15px;
+        }
+
+        #main img:nth-child(2) {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            float: left;
+            margin-top: 5px;
+            margin-right: 10px;
+            margin-bottom: 30px;
+        }
+
+        #main img:nth-child(1):hover {
+            width: 450px;
+            height: 253px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.5));
+            border-radius: 0%;
+        }
+
+        #main h1 {
+            color: #fdfdfd;
+            font-size: 16px;
+            line-height: 23px;
+        }
+
+        #main p {
+            font-size: 14px;
+            line-height: 18px;
+            color: #9c9999;
+        }
+
+        /* 網頁捲軸【寬度】 */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* 網頁捲軸【背景】顏色 */
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+
+        /* 網頁捲軸【把手】顏色 */
+        ::-webkit-scrollbar-thumb {
+            border-radius: 1rem;
+            background: #cccccc71;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="header">
+            <div class="a1">
+                <i class="fa-sharp fa-solid fa-bars"></i>
+            </div>
+            <div class="a2">
+                <img src="./YouTube-logo-full_color.png" width="120px" alt="">
+            </div>
+            <div class="a3">
+                <input type="text" placeholder="  搜尋">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div></div>
+            </div>
+            <div class="a4">
+                <i class="fa-solid fa-microphone"></i>
+            </div>
+            <div class="a5">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            <div class="a6">
+                <i class="fa-regular fa-circle-user"></i>
+                <span>登入</span>
+            </div>
+        </div>
+        <div id="nav">
+            <ul>
+                <li>全部</li>
+                <li>音樂</li>
+                <li>直播中</li>
+                <li>遊戲</li>
+                <li>卡通</li>
+                <li>最近上傳</li>
+            </ul>
+        </div>
+        <div id="left">
+            <table>
+                <tr>
+                    <td><i class="fa-solid fa-house"></i></td>
+                    <td>首頁</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-square-check"></i></td>
+                    <td>訂閱內容</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-film"></i></td>
+                    <td>Shorts</td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <td><i class="fa-solid fa-clapperboard"></i></td>
+                    <td>媒體庫</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-clock-rotate-left"></i></td>
+                    <td>觀看紀錄</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-scissors"></i></td>
+                    <td>你的短片</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-thumbs-up"></i></td>
+                    <td>喜歡的影片</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-chevron-down"></i></td>
+                    <td>顯示更多</td>
+                </tr>
+            </table>
+            <hr>
+            <h1>探索</h1>
+            <table>
+                <tr>
+                    <td><i class="fa-solid fa-fire-flame-curved"></i></td>
+                    <td>發燒影片</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-music"></i></td>
+                    <td>音樂</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-clapperboard"></i></td>
+                    <td>電影</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-gamepad"></i></td>
+                    <td>遊戲</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-newspaper"></i></td>
+                    <td>新聞</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-tower-broadcast"></i></td>
+                    <td>直播</td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <td><i class="fa-solid fa-gear"></i></td>
+                    <td>設定</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-regular fa-flag"></i></td>
+                    <td>檢舉紀錄</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-regular fa-circle-question"></i></td>
+                    <td>說明</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-circle-exclamation"></i></td>
+                    <td>提供意見</td>
+                </tr>
+            </table>
+            <hr>
+            <p>
+                簡介 媒體 版權 與我們聯絡<br>
+                創作者 廣告 開發人員<br>
+                <br>
+                條款 隱私權 政策與安全性<br>
+                YouTube 運作方式 測試新功能
+            </p>
+            <br>
+        </div>
+        <div id="main">
+            <div class="b1">
+                <img src="./photo/b01.png" alt="MV1">
+                <img
+                    src="https://yt3.googleusercontent.com/hZDUwjoeQqigphL4A1tkg9c6hVp5yXmbboBR7PYFUSFj5PIJSA483NB5v7b0XVoTN9GCku3tqQ=s176-c-k-c0x00ffffff-no-rj">
+                <h1>JISOO - ‘꽃(FLOWER)’ M/V</h1>
+                <p> BLACKPINK<br>
+                    觀看次數：3.9億次 7 天前</p>
+            </div>
+            <div class="b2">
+                <img src="./photo/b02.jpg" alt="MV2">
+                <img src="https://yt3.ggpht.com/aTcQbjLBXeliRJqVGGQNLmzcLug2FxQN0hvHL9n_1Ux-xmU42N4-UySBXbR3-8LcPncEPQ5rl8s=s48-c-k-c0x00ffffff-no-rj"
+                    alt="">
+                <h1>TAEYEON 태연 'INVU' MV</h1>
+                <p>THEBLACKLABEL<br>
+                    觀看次數：9652萬次 2 個月前</p>
+            </div>
+            <div class="b3">
+                <img src="./photo/b03.jpg" alt="MV3">
+                <img src="https://yt3.ggpht.com/_1Z4I2qpWaCN9g3BcDd3cVA9MDHOG43lE1YNWDNkKro49haGxkjwuFK-I8faWTKM6Jle9qb4ag=s48-c-k-c0x00ffffff-no-rj"
+                    alt="">
+                <h1>TAEYANG - 'VIBE (feat. Jimin of BTS)' M/V</h1>
+                <p>SMTOWN<br>
+                    觀看次數：5494萬次 1 年前</p>
+            </div>
+            <div class="b4">
+                <img src="./photo/b04.jpg" alt="KO1">
+                <img src="https://yt3.ggpht.com/iZbFutpCUGSAHOJSqVS84KnXuD46DRdCQaksyAtwt2jEnYJWqXRj78cs0Oc-ckJXMzogkFzK_Q=s48-c-k-c0x00ffffff-no-rj"
+                    alt="">
+                <h1>[國際夫妻] 擔任老闆的台灣老婆背後之韓國老公_家庭主夫的一天Vlog</h1>
+                <p>觀看次數：80萬次 2 年前</p>
+            </div>
+            <div class="b5">
+                <img src="./photo/b05.jpg" alt="KO2">
+                <img src="https://yt3.ggpht.com/ytc/AL5GRJWG0paeEEbVTvftfBzRQRBVBeAm_x_4azTatWIrjw=s48-c-k-c0x00ffffff-no-rj"
+                    alt="">
+                <h1>【蔡阿嘎哈佛工作室】韓國濟州島員工旅遊(上)：史上最豪華36人頂級行程！</h1>
+                <p>觀看次數：90萬次 1 個月前</p>
+            </div>
+            <div class="b6">
+                <img src="./photo/b06.jpg" alt="KO3">
+                <img src="https://yt3.googleusercontent.com/ytc/AL5GRJVFEAzIIphznH4gS-VxLbiXVYqotN7uOPcbT7995g=s176-c-k-c0x00ffffff-no-rj"
+                    alt="">
+                <h1>韓國人回韓國不花錢「到處蹭飯」可以活多久呢？🤣韓國金真實生活分享🇰🇷｜韓勾ㄟ金針菇 찐쩐꾸</h1>
+                <p>觀看次數：50萬次 6 天前</p>
+            </div>
+            <div class="b7">
+                <img src="./photo/b07.jpg" alt="YT1">
+                <img src="https://yt3.ggpht.com/CMkVgvgiSS3xrH7p4qnfpS2udOXjIVzjv-79K4prR8YLxHamTflwSf6XC-5IUOGMcsV-kMUPwQ=s48-c-k-c0x00ffffff-no-rj"
+                    alt="">
+                <h1>迷你Q六個月近況更新｜已經會爬了!!｜打針只哭幾聲｜還超會說話｜真的是天才兒童迷你Q｜十公斤重了...</h1>
+                <p>觀看次數：18萬次 2 年前</p>
+            </div>
+            <div class="b8">
+                <img src="./photo/b08.jpg" alt="YT2">
+                <img src="https://yt3.ggpht.com/yZ-f6QXCXmryOx5OgJmUpcwf9XYznHN3zohxnCum9vxIFRPw7vNIxvEh32paRukJPYlwdu1y4g=s48-c-k-c0x00ffffff-no-rj"
+                    alt="">
+                <h1>電視被萌弟打破啦～～～～｜那對夫妻(Nico&Kim&Nini&Lemon)</h1>
+                <p>觀看次數：10萬次 11 天前</p>
+            </div>
+            <div class="b9">
+                <img src="./photo/b09.jpg" alt="YT3">
+                <img src="https://yt3.ggpht.com/ytc/AL5GRJWcyl-cQOU7EylJB3OvaRuIk4MuS1x-ZuDT-eAEkw=s48-c-k-c0x00ffffff-no-rj"
+                    alt="">
+                <h1>【二伯育兒經#10】蔡桃貴成功戒奶嘴了！是如何辦到的呢？</h1>
+                <p>觀看次數：29萬次 1 年前</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
